@@ -1,0 +1,8 @@
+.col-md-4.col-md-offset-4
+  %h3
+    = t '.edit_article'
+    %small
+      = link_to t('phrase.approve'), '#', class: 'btn btn-default btn-xs'
+      = link_to t('phrase.edit'), edit_article_path(@article), class: 'btn btn-default btn-xs'
+      = link_to t('phrase.back'), articles_path, class: 'btn btn-default btn-xs'
+= render 'form'

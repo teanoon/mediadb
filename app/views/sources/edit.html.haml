@@ -1,0 +1,7 @@
+.col-md-4.col-md-offset-4
+  %h3
+    = t '.editing_source'
+    %small
+      = link_to t('phrase.show'), @source, class: 'btn btn-default btn-xs'
+      = link_to t('phrase.back'), sources_path, class: 'btn btn-default btn-xs'
+= render 'form'

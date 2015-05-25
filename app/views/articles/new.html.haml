@@ -1,0 +1,5 @@
+.col-md-12
+  %h3
+    = t '.new_article'
+    %small= link_to t('phrase.back'), articles_path, class: 'btn btn-default btn-xs'
+  .row= render 'form'

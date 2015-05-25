@@ -1,0 +1,9 @@
+.col-md-4.col-md-offset-4
+  = simple_form_for @medium do |f|
+    = f.error_notification
+
+    = f.input :login_name
+    = f.input :media_type, collection: Medium.media_types.keys, as: :radio_buttons
+
+    .form-actions
+      = f.button :submit

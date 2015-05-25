@@ -1,0 +1,74 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+cn:
+  devise:
+    resource:
+      user: 用户
+    form:
+      leave_password: "如果不需要修改密码，则可以留空。"
+      confirm_change: "修改以上内容需要你重新输入密码确认。"
+      use_email_login: 你将使用邮箱地址作为登录名。
+      name_after_deck: 请使用你最常用的用户名，我们将在每一个你创造的卡组前加上你名字。如“XXX 之 机械法”。
+      minimum_password_length: "密码不能少于%{length}个英文字符长度。"
+      log_in: 登录
+      sign_up: 注册
+      sign_in_with: "使用%{provider}登录"
+      forgot: 忘记密码？
+      not_received_confirmation: 还没收到确认邮件？
+      not_received_unlock: 还没收到解冻邮件？
+    confirmations:
+      confirmed: "你的邮箱地址已成功验证！"
+      send_instructions: "几分钟内你将收到电子邮件，请根据提示完成邮箱验证。"
+      send_paranoid_instructions: "你已经提交了邮箱地址，几分钟内你将收到电子邮件，请根据提示完成邮箱验证。"
+    failure:
+      already_authenticated: "你已登录。"
+      inactive: "你的账号尚未激活。"
+      invalid: "密码或%{authentication_keys}错误。"
+      locked: "你的账号已被冻结。"
+      last_attempt: "再次尝试失败则会冻结你的账号。"
+      not_found_in_database: "密码或%{authentication_keys}不匹配。"
+      timeout: "你的登录验证已过期，请重新登录。"
+      unauthenticated: "你需要登录以进行下一步操作。"
+      unconfirmed: "你需要验证邮箱地址才能进行下一步操作。"
+    mailer:
+      confirmation_instructions:
+        subject: "验证指引"
+      reset_password_instructions:
+        subject: "重置密码指引"
+      unlock_instructions:
+        subject: "解除冻结指引"
+    omniauth_callbacks:
+      failure: "由于%{reason}，我们无法通过%{kind}获取你的授权信息。"
+      success: "%{kind}授权成功。"
+    passwords:
+      no_token: "你必须通过密码重置邮件来访问这个页面。如果你确实是从密码重置邮件中访问的，请确认你的url是否完整。"
+      send_instructions: "几分钟内你将收到电子邮件，请根据提示完成密码重置。"
+      send_paranoid_instructions: "你已经提交了邮箱地址，几分钟内你将收到电子邮件，请根据提示完成密码重置。"
+      updated: "你的密码已成功修改，请使用新密码登录。"
+      updated_not_active: "你的密码已成功修改。"
+    registrations:
+      destroyed: "你的账号已注销，感谢过去对我们的支持，我们将继续努力。希望未来你还能选择我们的服务。"
+      signed_up: "欢迎！来自炉石传说的朋友！你已成功注册。"
+      signed_up_but_inactive: "你已注册成功，还差最后一步激活账号。"
+      signed_up_but_locked: "你已注册成功，但你的账号被冻结了。"
+      signed_up_but_unconfirmed: "激活邮件已经发送到你的邮箱，点击邮件中的激活链接来激活账号。"
+      update_needs_confirmation: "你已成功修改邮箱地址，我们需要重新验证你的新邮箱地址。请接收验证邮件，并根据提示完成操作。"
+      updated: "你的信息已成功更新。"
+    sessions:
+      signed_in: "登录成功！炉石传说的朋友！"
+      signed_out: "登出成功！欢迎下次访问！"
+      already_signed_out: "你已经登出当前账号了。"
+    unlocks:
+      send_instructions: "几分钟内你将收到电子邮件，请根据提示解冻账号。"
+      send_paranoid_instructions: "你已经提交了邮箱地址，几分钟内你将收到电子邮件，请根据提示解冻账号。"
+      unlocked: "你的账号已成功解冻，请重新登录。"
+  errors:
+    messages:
+      already_confirmed: "已经被确认过了，请尝试登录。"
+      confirmation_period_expired: "只有%{period}有效时间，并已过期。请重新发送请求邮件。"
+      expired: "已过期。请重新发送请求邮件。"
+      not_found: "丢失"
+      not_locked: "并没有冻结"
+      not_saved:
+        one: "有1个错误导致%{resource}不能保存："
+        other: "有%{count}个错误导致%{resource}不能保存："

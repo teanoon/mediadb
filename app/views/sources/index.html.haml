@@ -1,0 +1,24 @@
+.col-md-12
+  %h3
+    = t('.listing_sources')
+    %small= link_to t('.new_source'), new_source_path, class: 'btn btn-default btn-xs'
+
+.col-md-8.col-md-offset-2
+  %table.table
+    %thead
+      %tr
+        %th= t('.id')
+        %th= t('.name')
+        %th= t('.source')
+        %th= t('.opt')
+        
+    %tbody
+      - @sources.each do |source|
+        %tr
+          %td= source.id
+          %td= source.name
+          %td= link_to t('.list'), source.url
+          %td
+            .btn-group
+              = link_to t('phrase.edit'), edit_source_path(source), class: 'btn btn-default btn-xs'
+              = link_to t('phrase.destroy'), source, :method => :delete, :data => { :confirm => t('phrase.are_you_sure') }, class: 'btn btn-default btn-xs'

@@ -1,0 +1,60 @@
+cn:
+  simple_form:
+    "yes": '是'
+    "no": '否'
+    required:
+      text: '必填'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    options:
+      deck:
+        hero:
+          all: 全职业
+          druid: 德鲁伊
+          hunter: 猎人
+          mage: 法师
+          paladin: 圣骑士
+          priest: 牧师
+          rogue: 潜行者
+          shaman: 萨满
+          warlock: 术士
+          warrior: 战士
+          neutral: 中立
+      combo:
+        relationship:
+          friendly: 加强
+          hostile: 克制
+          forbidden: 禁用
+    error_notification:
+      default_message: "提交失败，请更正以下错误。"
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'
+  helpers:
+    submit:
+      deck:
+        submit: 创建
+        create: 创建
+        save: 保存
+        update: 保存
+      combo:
+        save: 保存
+        update: 保存

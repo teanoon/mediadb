@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title Mediadb
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %button.navbar-toggle.collapsed{ data: { toggle: 'collapse', target: '#menu' } }
+          = link_to t(:mediadb), root_path, class: 'navbar-brand'
+        #menu.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to t(:media), media_path
+            %li= link_to t(:aritcles), articles_path
+            %li= link_to t(:sources), sources_path
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to t(:log_in), new_user_session_path
+            %li= link_to t(:reg), new_user_registration_path
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to t('source.update_all'), update_all_sources_path
+    .container-fluid
+      .row
+        - if notice.present?
+          .col-md-12
+            .alert.alert-info= notice
+        = yield

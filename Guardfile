@@ -114,10 +114,10 @@ end
 #  - :concurrency (defaults to 1)
 #  - :timeout
 #  - :environment (corresponds to RAILS_ENV for the Sidekiq worker)
-# guard :sidekiq, concurrency: 20, logfile: 'log/sidekiq.log', config: 'config/sidekiq.yml', environment: 'development' do
-#   watch(%r{app/models/.+\.rb})
-#   watch(%r{^workers/(.+)\.rb$})
-# end
+guard :sidekiq, concurrency: 20, logfile: 'log/sidekiq.log', config: 'config/sidekiq.yml', environment: 'development' do
+  watch(%r{app/models/.+\.rb})
+  watch(%r{^workers/(.+)\.rb$})
+end
 
 # guard 'zeus' do
 #   # uses the .rspec file

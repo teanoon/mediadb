@@ -33,6 +33,11 @@ gem 'rails_admin'
 gem 'carrierwave'
 gem 'mechanize'
 
+# sidekiq stuff
+gem 'sinatra'
+gem 'sidekiq'
+gem 'sidetiq'                       # schedule
+
 group :production do
   gem 'rails_12factor'
   gem 'puma'
@@ -45,7 +50,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano3-puma'
-  # gem 'capistrano-sidekiq'
+  gem 'capistrano-sidekiq'
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-zeus'

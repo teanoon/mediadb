@@ -1,17 +1,18 @@
 class Medium < ActiveRecord::Base
   enum media_type: [:wechat, :weibo]
 
-  has_and_belongs_to_many :articles
+  has_many :articles, through: :articles_media
+  has_many :articles_media
   belongs_to :user
 
   def change_article article, status
     status_code = ArticlesMedium.statuses[status.to_sym]
-    article = ArticlesMedium.find_or_create_by(
+    article_medium = ArticlesMedium.find_or_create_by(
       medium_id: id,
-      article_id: (article.try(:id) || article)
+      article_id: article.try(:id)
     )
 
-    article.update_attributes status: status_code
+    article_medium.update_attributes status: status_code
   end
 
   def add_article article

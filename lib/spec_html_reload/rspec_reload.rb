@@ -34,7 +34,7 @@ class LiveHtmlPrinter < RSpec::Core::Formatters::HtmlPrinter
   <script type="text/javascript">
     RACK_LIVERELOAD_PORT = 3004;
   </script>
-  <script type="text/javascript" src="http://localhost:3004/livereload.js?"></script>
+  <script type="text/javascript" src="http://192.168.99.101:3004/livereload.js?"></script>
   <title>RSpec results</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Expires" content="-1" />

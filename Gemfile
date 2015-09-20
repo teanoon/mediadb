@@ -37,6 +37,7 @@ gem 'mechanize'
 gem 'sinatra'
 gem 'sidekiq'
 gem 'sidetiq'                       # schedule
+gem 'sidekiq-failures'              # track failed jobs
 
 group :production do
   gem 'rails_12factor'

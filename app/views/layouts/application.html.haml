@@ -14,14 +14,18 @@
         #menu.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li= link_to t(:media), media_path
-            %li= link_to t(:aritcles), articles_path
-            %li= link_to t(:sources), sources_path
-            %li= link_to t(:sidekiq), "sidekiq"
+            - if current_user.try(:admin?)
+              %li= link_to t(:sources), sources_path
+              %li= link_to t(:sidekiq), "sidekiq"
           %ul.nav.navbar-nav.navbar-right
-            %li= link_to t(:log_in), new_user_session_path
-            %li= link_to t(:reg), new_user_registration_path
-          %ul.nav.navbar-nav.navbar-right
-            %li= link_to t('source.update_all'), update_all_sources_path
+            - if user_signed_in?
+              %li= link_to t(:logout), destroy_user_session_path, method: :delete, data: { confirm: t('phrase.are_you_sure') }
+            - else
+              %li= link_to t(:log_in), new_user_session_path
+              %li= link_to t(:reg), new_user_registration_path
+          - if current_user.try(:admin?)
+            %ul.nav.navbar-nav.navbar-right
+              %li= link_to t('source.update_all'), update_all_sources_path
     .container-fluid
       .row
         - if notice.present?

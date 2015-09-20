@@ -1,10 +1,11 @@
 class MediaController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_medium, only: [:show, :edit, :update, :destroy]
 
   # GET /media
   # GET /media.json
   def index
-    @media = Medium.all
+    @media = current_user.media
   end
 
   # GET /media/1
@@ -14,7 +15,7 @@ class MediaController < ApplicationController
 
   # GET /media/new
   def new
-    @medium = Medium.new
+    @medium = current_user.media.new
   end
 
   # GET /media/1/edit
@@ -24,7 +25,7 @@ class MediaController < ApplicationController
   # POST /media
   # POST /media.json
   def create
-    @medium = Medium.new(medium_params)
+    @medium = current_user.media.new(medium_params)
 
     respond_to do |format|
       if @medium.save
@@ -64,11 +65,11 @@ class MediaController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_medium
-      @medium = Medium.find(params[:id])
+      @medium = current_user.media.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medium_params
-      params[:medium].permit(:login_name, :media_type)
+      params[:medium].permit(:login_name, :media_type, :header, :footer)
     end
 end

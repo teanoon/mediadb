@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417164028) do
+ActiveRecord::Schema.define(version: 20150525045202) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20150417164028) do
     t.string   "login_name", limit: 255
     t.integer  "media_type", limit: 4
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.text     "header",     limit: 65535
+    t.text     "footer",     limit: 65535
   end
 
   create_table "sources", force: :cascade do |t|

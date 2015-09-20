@@ -8,16 +8,18 @@
     %thead
       %tr
         %th= t '.id'
-        %th= t '.media_type'
         %th= t '.login_name'
+        %th= t '.media_type'
         %th= t '.opt'
     %tbody
       - @media.each do |medium|
         %tr
           %td= medium.id
-          %td= medium.media_type
           %td= medium.login_name
+          %td= medium.media_type
           %td
             .btn-group
+              = link_to t('.pick_articles'), medium_articles_path(medium), class: 'btn btn-default btn-xs'
+              = link_to t('.phrase.show'), medium, class: 'btn btn-default btn-xs'
               = link_to t('phrase.edit'), edit_medium_path(medium), class: 'btn btn-default btn-xs'
               = link_to t('phrase.destroy'), medium, method: :delete, data: { confirm: t('phrase.are_you_sure') }, class: 'btn btn-default btn-xs'

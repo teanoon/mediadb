@@ -5,5 +5,10 @@
     = f.input :login_name
     = f.input :media_type, collection: Medium.media_types.keys, as: :radio_buttons
 
+    %hr
+
+    = f.input :header, as: :text, input_html: { rows: 3 }
+    = f.input :footer, as: :text, input_html: { rows: 3 }
+
     .form-actions
       = f.button :submit

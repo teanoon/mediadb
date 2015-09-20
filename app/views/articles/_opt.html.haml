@@ -1,0 +1,10 @@
+.btn-group
+  - if action_name == 'index'
+    = link_to t('phrase.show'), medium_article_path(medium, article), class: 'btn btn-default btn-xs'
+  - if action_name != 'edit'
+    = link_to t('phrase.edit'), edit_medium_article_path(medium, article), class: 'btn btn-default btn-xs'
+    = link_to t('.add_to_medium'), add_to_medium_medium_article_path(medium, article), class: 'btn btn-default btn-xs'
+    = link_to t('.send_to_medium'), send_to_medium_medium_article_path(medium, article), class: 'btn btn-default btn-xs'
+    = link_to t('.ban_from_medium'), ban_from_medium_medium_article_path(medium, article), class: 'btn btn-default btn-xs'
+  - if current_user.try(:admin?)
+    = link_to t('phrase.destroy'), medium_article_path(medium, article), method: :delete, data: { confirm: t('phrase.are_you_sure') }, class: 'btn btn-default btn-xs'

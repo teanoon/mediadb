@@ -1,9 +1,13 @@
-.col-md-12
+.col-md-8.col-md-offset-2
   %h3
     = t '.listing_articles'
-    %small= link_to t('.new_article'), new_article_path, class: 'btn btn-default btn-xs'
+    \@
+    = @medium.login_name
+    %small= link_to t('.new_article'), new_medium_article_path, class: 'btn btn-default btn-xs'
 
-.col-md-8.col-md-offset-2
+  %ul.nav-tabs.nav
+    %li{ class: active?(params[:includes] != 'all') }= link_to '.belongs', medium_articles_path
+    %li{ class: active?(params[:includes] == 'all') }= link_to '.all', medium_articles_path(includes: 'all')
   %table.table
     %thead
       %tr
@@ -13,12 +17,8 @@
         %th= t '.opt'
     %tbody
       - @articles.each do |article|
-        %tr
+        %tr{ class: active?(article.medium_id == @medium.id) }
           %td= article.id
-          %td= link_to article.title, article
-          %td= link_to t('.source'), article.url
-          %td
-            .btn-group
-              = link_to t('phrase.show'), article, class: 'btn btn-default btn-xs'
-              = link_to t('phrase.edit'), edit_article_path(article), class: 'btn btn-default btn-xs'
-              = link_to t('phrase.destroy'), article, method: :delete, data: { confirm: t('phrase.are_you_sure') }, class: 'btn btn-default btn-xs'
+          %td= link_to article.title, medium_article_path(@medium, article)
+          %td= link_to t('.source'), article.url, target: '_blank'
+          %td= render partial: 'opt', locals: { medium: @medium, article: article }

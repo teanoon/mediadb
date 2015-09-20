@@ -8,9 +8,11 @@ RSpec.describe Medium, type: :model do
 
   describe '#articles' do
     it 'gets approved articles by default' do
+      medium.add_article articles.pop
       medium.articles << articles
       expect(medium.articles.count).to eql 10
-      expect(medium.articles.approved.count).to eql 10
+      expect(medium.articles.approved.count).to eql 1
+      expect(medium.articles.audit.count).to eql 9
     end
 
     it 'gets banned articles by given status' do

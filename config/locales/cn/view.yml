@@ -52,6 +52,7 @@ cn:
     add: 添加
     update: 更新
     cancel: 取消
+    destroy: 删除
     remove: 移除
     delete: 删除
     back: 返回
@@ -106,3 +107,8 @@ cn:
     shared:
       links:
         or_login_with: 或者使用以下社交网站账号登录：
+  articles:
+    opt:
+      add_to_medium: 添加到媒体
+      send_to_medium: 发布到媒体
+      ban_from_medium: 不在显示

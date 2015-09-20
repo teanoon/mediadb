@@ -3,8 +3,16 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
   devise_for :users
 
-  resources :articles
-  resources :media, except: :show
+  resources :media do
+    resources :articles do
+      member do
+        get 'add_to_medium'
+        get 'ban_from_medium'
+        get 'send_to_medium'
+      end
+    end
+  end
+
   resources :sources, except: :show do
     get 'update_all', on: :collection
   end

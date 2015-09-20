@@ -53,7 +53,7 @@ class CucumberReload < Cucumber::Formatter::Html
     <script type="text/javascript">
       RACK_LIVERELOAD_PORT = #{port};
     </script>
-    <script type="text/javascript" src="http://192.168.1.104:#{port}/livereload.js?"></script>
+    <script type="text/javascript" src="http://192.168.99.101:#{port}/livereload.js?"></script>
     EOF
   end
 end

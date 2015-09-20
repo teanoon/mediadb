@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :media
+
+  def admin?
+    email == 'admin@admin.com'
+  end
 end
